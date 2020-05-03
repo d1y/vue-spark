@@ -2,7 +2,7 @@
 
 简单的点击效果
 
-[](https://i.loli.net/2020/05/03/q7vXomTzY2sECVU.gif)
+![update](https://i.loli.net/2020/05/03/q7vXomTzY2sECVU.gif)
 
 ```
 npm install --save vue-spark
