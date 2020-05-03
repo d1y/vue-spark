@@ -1,0 +1,18 @@
+{
+  "name": "vue-spark",
+  "version": "1.0.0",
+  "description": "a vuejs click effect",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/d1y/vue-spark"
+  },
+  "keywords": [
+    "vue"
+  ],
+  "author": "d1y <chenhonzhou@gmail.com>",
+  "license": "MIT"
+}
