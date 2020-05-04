@@ -14,8 +14,39 @@ npm install --save vue-spark
 import Click from 'vue-spark'
 import Vue from 'vue'
 
-Vue.directive('click', Click)
+Vue.directive('click', Click())
 
+```
+
+你也可以传入一些在`Click()`中传入参数
+
+```js
+import Click from 'vue-spark'
+const options = {
+  opacity: .5, // 透明度. 最小0.1, 最大1
+  style: {
+    backgroundColor: 'green'
+  } // 自定义的样式
+}
+export default Click(options)
+```
+
+如果你需要修改样式的话, 需要在 `vm.$nextTick` 回调中使用`setStyle`方法
+
+```js
+import { setStyle } from 'vue-spark'
+
+{
+  created() {
+    this.$nextTick(()=> {
+      setStyle({
+        backgroundColor: 'blue',
+        width: `120px`,
+        height: `120px`
+      })
+    })
+  }
+}
 ```
 
 在你需要的元素添加自定义指令即可
@@ -27,19 +58,3 @@ Vue.directive('click', Click)
   </div>
 </template>
 ```
-
-## FAQ
-
-1. 样式太丑了, 我想自己写
-
-```js
-import { setStyle } from 'vue-spark'
-// 自行添加样式..
-setStyle({
-  background: 'blue'
-})
-```
-
-2. 我只想在当前元素上有效果
-
-参考一下源码, 我写的这个是相对于`document.body`的,
